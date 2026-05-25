@@ -152,6 +152,7 @@ interface RedFormSelectProps extends React.SelectHTMLAttributes<HTMLSelectElemen
   register: any;
   options: { label: string; value: string }[];
   icon?: React.ComponentType<{ className?: string }>;
+  placeholder?: string;
 }
 
 const RedFormSelect: React.FC<RedFormSelectProps> = ({

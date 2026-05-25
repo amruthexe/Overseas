@@ -13,6 +13,7 @@ interface FormSelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> 
   register: UseFormRegisterReturn;
   options: Option[];
   icon?: React.ComponentType<{ className?: string }>;
+  placeholder?: string;
 }
 
 export const FormSelect: React.FC<FormSelectProps> = ({

@@ -66,7 +66,7 @@ export const StatsSection = () => {
               
               {/* Short explanation */}
               <p className="text-xs text-red-100/70 max-w-[200px] mt-1.5 leading-relaxed font-semibold">
-                {stat.desc}
+                {stat.description}
               </p>
             </motion.div>
           ))}
