@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827; /* Modern dark slate, softer than pure black */
+  
+  /* Study Abroad Primary Red Theme (#dc2626 / red-600) */
+  --primary: #dc2626;
+  --primary-hover: #b91c1c;
+  --primary-light: #fef2f2;
+  
+  /* Germany Portal Theme: Dark Navy (#071B44) & Red/Orange Accent (#F05A28) */
+  --navy-dark: #071B44;
+  --navy-dark-hover: #0a255c;
+  --accent-orange: #F05A28;
+  --accent-orange-light: #fff2ee;
+  
+  /* Grays for premium borders and background contrasts */
+  --accent-gray: #f9fafb;
+  --border-gray: #e5e7eb;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  
+  /* Study Abroad Brand Colors */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-light: var(--primary-light);
+  
+  /* Germany Visa Portal Colors */
+  --color-navy-dark: var(--navy-dark);
+  --color-navy-dark-hover: var(--navy-dark-hover);
+  --color-accent-orange: var(--accent-orange);
+  --color-accent-orange-light: var(--accent-orange-light);
+  
+  --color-accent-gray: var(--accent-gray);
+  --color-border-gray: var(--border-gray);
+  
+  /* Shadows */
+  --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  --shadow-premium-hover: 0 20px 40px -15px rgba(220, 38, 38, 0.08);
+  --shadow-navy-hover: 0 20px 40px -15px rgba(7, 27, 68, 0.12);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.04);
+  
+  /* Transitions */
+  --transition-custom: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Smooth custom scrollbar for premium touch */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #071B44;
+  }
+}
+
+/* Animations for timeline drawing */
+@keyframes drawLine {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-draw {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawLine 2s ease-out forwards;
+}
