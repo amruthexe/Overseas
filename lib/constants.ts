@@ -9,7 +9,8 @@ import {
   Clock,
   Send,
   UserCheck,
-  ShieldCheck
+  ShieldCheck,
+  Code
 } from "lucide-react";
 
 export interface Service {
@@ -94,16 +95,7 @@ export const SUCCESS_STATS: Stat[] = [
   }
 ];
 
-export const TRUSTED_UNIVERSITIES = [
-  { name: "University of Oxford", country: "UK", logoText: "Oxford" },
-  { name: "Harvard University", country: "USA", logoText: "Harvard" },
-  { name: "University of Toronto", country: "Canada", logoText: "Toronto" },
-  { name: "University of Melbourne", country: "Australia", logoText: "Melbourne" },
-  { name: "Technical University of Munich", country: "Germany", logoText: "TU Munich" },
-  { name: "Trinity College Dublin", country: "Ireland", logoText: "Trinity" },
-  { name: "Stanford University", country: "USA", logoText: "Stanford" },
-  { name: "Imperial College London", country: "UK", logoText: "Imperial" }
-];
+
 
 export const SERVICES: Service[] = [
   {
@@ -121,33 +113,38 @@ export const SERVICES: Service[] = [
     benefits: ["Document checklisting", "Financial planning guidance", "Visa slot booking", "Mock interviews"]
   },
   {
-    id: "ielts",
-    title: "IELTS & Language Coaching",
-    description: "Result-oriented training for IELTS, TOEFL, PTE, and GRE by certified master trainers.",
-    icon: Award,
-    benefits: ["Personalized study plans", "Weekly full-length mocks", "Grammar & vocabulary sessions", "Flexible batch timings"]
+    id: "it-jobs",
+    title: "IT Jobs",
+    description: "Direct placement assistance and career guidance for software developers, system architects, and tech professionals globally.",
+    icon: Code,
+    benefits: ["Global tech job listings", "Technical interview prep", "Resume & LinkedIn optimization", "Sponsorship & visa support"]
   },
   {
-    id: "sop-lor",
-    title: "SOP & Documentation",
-    description: "Expert editing and feedback to draft highly compelling SOPs, LORs, and academic resumes.",
-    icon: FileText,
-    benefits: ["SOP structure workshops", "LOR templates & editing", "Professional CV crafting", "Personal brand mapping"]
-  },
-  {
-    id: "scholarships",
-    title: "Scholarship Guidance",
-    description: "Identify and apply for merit-based, need-based, and country-specific scholarships.",
-    icon: Compass,
-    benefits: ["Scholarship eligibility mapping", "Application writing help", "External grant options", "Fee waiver support"]
+    id: "non-it-jobs",
+    title: "Non-IT Jobs",
+    description: "Placement opportunities and support for professionals in engineering, healthcare, management, hospitality, and other non-technical domains.",
+    icon: Briefcase,
+    benefits: ["Global sector opportunities", "Domain mock interviews", "Credential evaluations", "Direct employer hiring events"]
   },
   {
     id: "counselling",
     title: "Career Counselling",
     description: "Identify your true potential and align your interests with high-growth global career paths.",
-    icon: Briefcase,
+    icon: Compass,
     benefits: ["Psychometric evaluations", "Global job market analysis", "Post-study work visa updates", "Alumni network access"]
-  }
+  },
+  {
+  id: "application-support",
+  title: "Application Assistance",
+  description: "Build strong applications that maximize your chances of admission to top universities.",
+  icon: FileText,
+  benefits: [
+    "Application review",
+    "Document preparation",
+    "SOP & LOR guidance",
+    "Application tracking support"
+  ]
+}
 ];
 
 export const DESTINATIONS: Destination[] = [
@@ -347,5 +344,130 @@ export const FAQS: FAQ[] = [
     question: "Am I allowed to work part-time while studying abroad?",
     answer: "Yes! In major study destinations like the USA, UK, Canada, Australia, and Germany, international students are generally allowed to work up to 20 hours per week during active semesters and full-time (40 hours per week) during semester breaks. This helps cover a major portion of your day-to-day living expenses.",
     category: "scholarship"
+  }
+];
+
+export const TRUSTED_UNIVERSITIES = [
+  {
+    name: "United States",
+    logoText: "USA",
+    country: "United States",
+    countryCode: "US",
+  },
+  {
+    name: "United Kingdom",
+    logoText: "ENGLAND",
+    country: "United Kingdom",
+    countryCode: "GB",
+  },
+  {
+    name: "Germany",
+    logoText: "GERMANY",
+    country: "Germany",
+    countryCode: "DE",
+  },
+  {
+    name: "Ireland",
+    logoText: "IRELAND",
+    country: "Ireland",
+    countryCode: "IE",
+  },
+  {
+    name: "Canada",
+    logoText: "CANADA",
+    country: "Canada",
+    countryCode: "CA",
+  },
+  {
+    name: "Australia",
+    logoText: "AUSTRALIA",
+    country: "Australia",
+    countryCode: "AU",
+  },
+  {
+  name: "France",
+  logoText: "FRANCE",
+  country: "France",
+  countryCode: "FR",
+},
+{
+  name: "Netherlands",
+  logoText: "NETHERLANDS",
+  country: "Netherlands",
+  countryCode: "NL",
+},
+];
+
+export interface JobOpening {
+  id: string;
+  title: string;
+  category: "IT" | "Non-IT";
+  location: string;
+  company: string;
+  salaryRange: string;
+  experience: string;
+  tags: string[];
+}
+
+export const FEATURED_JOBS: JobOpening[] = [
+  {
+    id: "job-1",
+    title: "Software Engineer (Full-Stack)",
+    category: "IT",
+    location: "Munich, Germany",
+    company: "Apex Tech Solutions",
+    salaryRange: "€65,000 - €85,000 / year",
+    experience: "2-5 years",
+    tags: ["React", "Node.js", "TypeScript", "Visa Sponsorship"]
+  },
+  {
+    id: "job-2",
+    title: "Data Scientist",
+    category: "IT",
+    location: "Dublin, Ireland",
+    company: "Innova Analytics",
+    salaryRange: "€70,000 - €90,000 / year",
+    experience: "3+ years",
+    tags: ["Python", "Machine Learning", "SQL", "Sponsorship Available"]
+  },
+  {
+    id: "job-3",
+    title: "Mechanical Design Engineer",
+    category: "Non-IT",
+    location: "Stuttgart, Germany",
+    company: "AutoWerk Industry",
+    salaryRange: "€55,000 - €75,000 / year",
+    experience: "2+ years",
+    tags: ["CAD/SolidWorks", "Automotive", "German B1 Pref."]
+  },
+  {
+    id: "job-4",
+    title: "Registered Nurse (Healthcare)",
+    category: "Non-IT",
+    location: "London, United Kingdom",
+    company: "NHS Trust Partner",
+    salaryRange: "£32,000 - £45,000 / year",
+    experience: "1+ years",
+    tags: ["NHS Registration", "Nursing Degree", "Visa Provided"]
+  },
+  {
+    id: "job-5",
+    title: "Cloud Devops Engineer",
+    category: "IT",
+    location: "Berlin, Germany",
+    company: "CloudScale Systems",
+    salaryRange: "€75,000 - €95,000 / year",
+    experience: "4+ years",
+    tags: ["AWS/Azure", "Kubernetes", "CI/CD", "English Speaking"]
+  },
+  {
+    id: "job-6",
+    title: "Project Manager (Construction/Engineering)",
+    category: "Non-IT",
+    location: "Toronto, Canada",
+    company: "Vertex Builders",
+    salaryRange: "CAD 80,000 - 105,000 / year",
+    experience: "5+ years",
+    tags: ["PMP", "Civil Engineering", "LMIA Available"]
   }
 ];

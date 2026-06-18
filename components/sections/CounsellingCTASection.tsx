@@ -55,7 +55,7 @@ const RedOptionCard: React.FC<RedOptionCardProps> = ({
     <button
       type="button"
       onClick={onClick}
-      className={`relative flex flex-col items-center justify-center p-4 rounded-xl border text-center transition-all duration-200 cursor-pointer select-none w-full outline-none focus:ring-2 focus:ring-primary/20 ${
+      className={`relative flex flex-col items-center justify-center p-3 sm:p-4 rounded-xl border text-center transition-all duration-200 cursor-pointer select-none w-full outline-none focus:ring-2 focus:ring-primary/20 ${
         selected
           ? "border-primary bg-primary/5 text-gray-900 ring-1 ring-primary shadow-subtle"
           : "border-border-gray bg-white text-gray-700 hover:border-gray-400 hover:bg-accent-gray/50"
@@ -73,7 +73,7 @@ const RedOptionCard: React.FC<RedOptionCardProps> = ({
 
       {Icon && (
         <div
-          className={`p-2.5 rounded-lg mb-2 transition-colors ${
+          className={`p-2 sm:p-2.5 rounded-lg mb-1.5 sm:mb-2 transition-colors ${
             selected ? "bg-primary/10 text-primary" : "bg-accent-gray text-gray-500"
           }`}
         >
@@ -407,7 +407,7 @@ export const CounsellingCTASection = () => {
   const percentage = Math.round((step / 5) * 100);
 
   return (
-    <section id="counselling-form" className="bg-accent-gray py-16 md:py-24 border-t border-border-gray/30">
+    <section id="counselling-form" className="bg-transparent py-16 md:py-24 border-t border-border-gray/30">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -429,21 +429,21 @@ export const CounsellingCTASection = () => {
           
           {/* Progress Tracker bar - hidden on Success Screen */}
           {!isSubmitted && (
-            <div className="bg-gray-50 border-b border-border-gray px-6 py-4 flex items-center justify-between gap-4 select-none">
+            <div className="bg-gray-50 border-b border-border-gray px-4 sm:px-6 py-4 flex items-center justify-between gap-3 sm:gap-4 select-none">
               <div className="flex-grow bg-gray-200 h-2 rounded-full overflow-hidden">
                 <div
                   style={{ width: `${percentage}%` }}
                   className="h-full bg-primary transition-all duration-300 rounded-full"
                 />
               </div>
-              <div className="shrink-0 text-xs font-black text-gray-700 bg-white border border-border-gray/60 px-3 py-1 rounded-full">
+              <div className="shrink-0 text-[10px] sm:text-xs font-black text-gray-700 bg-white border border-border-gray/60 px-2.5 py-1 rounded-full">
                 Step {step} of 5 ({percentage}%)
               </div>
             </div>
           )}
 
           {/* Form Area */}
-          <div className="p-6 md:p-10 text-center sm:text-left">
+          <div className="p-4 sm:p-6 md:p-10 text-center sm:text-left">
             <AnimatePresence mode="wait">
               {!isSubmitted ? (
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -633,7 +633,7 @@ export const CounsellingCTASection = () => {
                           size="md"
                           type="button"
                           onClick={handleBack}
-                          className="flex items-center gap-1.5"
+                          className="flex items-center gap-1.5 w-1/2 sm:w-auto justify-center"
                         >
                           <ArrowLeft className="h-4 w-4" />
                           <span>Back</span>
@@ -643,7 +643,7 @@ export const CounsellingCTASection = () => {
                           size="md"
                           type="button"
                           onClick={handleContinue}
-                          className="flex items-center gap-1.5"
+                          className="flex items-center gap-1.5 w-1/2 sm:w-auto justify-center"
                         >
                           <span>Continue</span>
                           <ArrowRight className="h-4 w-4" />
@@ -696,7 +696,7 @@ export const CounsellingCTASection = () => {
                         <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider">
                           Preferred Visa Type
                         </label>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
                           {(["Job Seeker Visa", "PR", "Student Visa", "Work Visa"] as const).map((visa) => (
                             <RedOptionCard
                               key={visa}
@@ -778,7 +778,7 @@ export const CounsellingCTASection = () => {
                           size="md"
                           type="button"
                           onClick={handleBack}
-                          className="flex items-center gap-1.5"
+                          className="flex items-center gap-1.5 w-1/2 sm:w-auto justify-center"
                         >
                           <ArrowLeft className="h-4 w-4" />
                           <span>Back</span>
@@ -788,7 +788,7 @@ export const CounsellingCTASection = () => {
                           size="md"
                           type="button"
                           onClick={handleContinue}
-                          className="flex items-center gap-1.5"
+                          className="flex items-center gap-1.5 w-1/2 sm:w-auto justify-center"
                         >
                           <span>Continue</span>
                           <ArrowRight className="h-4 w-4" />
@@ -866,7 +866,7 @@ export const CounsellingCTASection = () => {
                         <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider">
                           Main reason for moving *
                         </label>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {(["Career & salary", "Settlement", "Children's future", "Quality of life"] as const).map((reason) => (
                             <RedOptionCard
                               key={reason}
@@ -893,7 +893,7 @@ export const CounsellingCTASection = () => {
                           size="md"
                           type="button"
                           onClick={handleBack}
-                          className="flex items-center gap-1.5"
+                          className="flex items-center gap-1.5 w-1/2 sm:w-auto justify-center"
                         >
                           <ArrowLeft className="h-4 w-4" />
                           <span>Back</span>
@@ -903,7 +903,7 @@ export const CounsellingCTASection = () => {
                           size="md"
                           type="button"
                           onClick={handleContinue}
-                          className="flex items-center gap-1.5"
+                          className="flex items-center gap-1.5 w-1/2 sm:w-auto justify-center"
                         >
                           <span>Continue</span>
                           <ArrowRight className="h-4 w-4" />
@@ -966,7 +966,7 @@ export const CounsellingCTASection = () => {
                         <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider">
                           Mode of Consultation *
                         </label>
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                           {(["Phone", "Video", "In-person"] as const).map((mode) => (
                             <RedOptionCard
                               key={mode}
@@ -1002,7 +1002,7 @@ export const CounsellingCTASection = () => {
                           type="button"
                           onClick={handleBack}
                           disabled={isSubmitting}
-                          className="flex items-center gap-1.5"
+                          className="flex items-center gap-1.5 w-1/2 sm:w-auto justify-center"
                         >
                           <ArrowLeft className="h-4 w-4" />
                           <span>Back</span>
@@ -1012,7 +1012,7 @@ export const CounsellingCTASection = () => {
                           size="md"
                           type="submit"
                           disabled={isSubmitting}
-                          className="flex items-center gap-1.5 shadow-md shadow-primary/20 cursor-pointer justify-center w-full sm:w-auto"
+                          className="flex items-center gap-1.5 shadow-md shadow-primary/20 cursor-pointer justify-center w-1/2 sm:w-auto"
                         >
                           <span>{isSubmitting ? "Booking My Call..." : "Book My Free Call"}</span>
                           {isSubmitting ? (

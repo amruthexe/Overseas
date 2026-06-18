@@ -19,6 +19,7 @@ export const Navbar = () => {
 
   const navLinks = [
     { name: "Services", href: "services" },
+    { name: "Jobs", href: "featured-jobs" },
     { name: "Destinations", href: "destinations" },
     { name: "Why Choose Us", href: "why-choose-us" },
     { name: "Process", href: "process" },
@@ -87,7 +88,7 @@ export const Navbar = () => {
                 className="flex items-center gap-2 text-sm font-semibold text-gray-700 hover:text-primary transition-colors mr-2"
               >
                 <PhoneCall className="h-4 w-4 text-primary" />
-                <span>+1 800 123 4567</span>
+                <span>+91 9052580275</span>
               </a>
               <Button
                 variant="primary"
@@ -140,7 +141,7 @@ export const Navbar = () => {
                   className="flex items-center gap-3 text-base font-semibold text-gray-700"
                 >
                   <PhoneCall className="h-5 w-5 text-primary" />
-                  <span>+1 800 123 4567</span>
+                  <span>+91 9052580275</span>
                 </a>
                 <Button
                   variant="primary"

@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from "react";
@@ -8,6 +9,7 @@ import { Check } from "lucide-react";
 export const ServicesSection = () => {
   const handleScrollTo = (id: string) => {
     const element = document.getElementById(id);
+
     if (element) {
       const offset = 80;
       const bodyRect = document.body.getBoundingClientRect().top;
@@ -17,78 +19,144 @@ export const ServicesSection = () => {
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
 
   return (
-    <section id="services" className="bg-white py-16 md:py-24">
+    <section
+      id="services"
+      className="bg-transparent py-16 md:py-24"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Title */}
-        <div className="text-center mb-12 md:mb-16 max-w-2xl mx-auto space-y-3">
-          <h2 className="text-xs md:text-sm font-bold uppercase tracking-widest text-primary">
-            Our Offerings
+        {/* Section Header */}
+        <div className="text-center mb-14 md:mb-20 max-w-3xl mx-auto">
+          <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-widest mb-4">
+            Our Services
+          </span>
+
+          <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+            Complete Overseas Education Solutions
           </h2>
-          <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight">
-            Comprehensive End-to-End Overseas Services
-          </h3>
-          <p className="text-sm md:text-base text-gray-500 leading-relaxed font-medium">
-            We handle everything from academic screening to global boarding. Partner with experts who streamline your admission journey.
+
+          <p className="text-base md:text-lg text-gray-500 leading-relaxed">
+            From career counselling to visa approvals, we provide personalized
+            guidance at every stage of your international education journey.
           </p>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {SERVICES.map((service, index) => {
             const Icon = service.icon;
+
             return (
               <Card
                 key={service.id}
-                delay={index * 0.05}
-                className="flex flex-col h-full group"
+                delay={index * 0.08}
+                className="
+                  relative
+                  overflow-hidden
+                  flex flex-col
+                  h-full
+                  bg-white
+                  border
+                  border-gray-100
+                  rounded-3xl
+                  hover:border-primary/20
+                  hover:shadow-2xl
+                  hover:-translate-y-2
+                  transition-all
+                  duration-500
+                  group
+                "
               >
-                {/* Icon Wrapper */}
-                <div className="bg-gray-50 text-gray-600 group-hover:bg-primary-light group-hover:text-primary p-3 rounded-2xl w-fit mb-5 transition-colors duration-300">
-                  <Icon className="h-6 w-6" />
+                {/* Top Gradient Line */}
+                <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-primary via-red-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                {/* Large Background Number */}
+                <div className="absolute top-4 right-5 text-6xl font-black text-gray-100 group-hover:text-primary/10 transition-colors duration-500 pointer-events-none">
+                  {(index + 1).toString().padStart(2, "0")}
                 </div>
 
-                {/* Content */}
-                <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-2 group-hover:text-primary transition-colors duration-300">
+                {/* Icon */}
+                <div
+                  className="
+                    bg-gradient-to-br
+                    from-primary/10
+                    to-primary/5
+                    text-primary
+                    p-4
+                    rounded-2xl
+                    w-fit
+                    mb-6
+                    group-hover:scale-110
+                    group-hover:rotate-3
+                    transition-all
+                    duration-500
+                  "
+                >
+                  <Icon className="h-7 w-7" />
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-extrabold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
                   {service.title}
-                </h4>
-                
-                <p className="text-sm text-gray-500 mb-5 leading-relaxed flex-grow">
+                </h3>
+
+                {/* Description */}
+                <p className="text-sm text-gray-500 leading-relaxed mb-6 flex-grow">
                   {service.description}
                 </p>
 
-                {/* Benefits Bullet List */}
-                <ul className="space-y-2 border-t border-border-gray/60 pt-4 mb-6">
+                {/* Benefits */}
+                <ul className="space-y-3 border-t border-gray-100 pt-5 mb-7">
                   {service.benefits.map((benefit, bIndex) => (
-                    <li key={bIndex} className="flex items-center gap-2 text-xs font-semibold text-gray-600">
-                      <div className="bg-emerald-50 text-emerald-600 p-0.5 rounded-full shrink-0">
+                    <li
+                      key={bIndex}
+                      className="flex items-start gap-3 text-sm text-gray-600"
+                    >
+                      <div className="bg-emerald-100 text-emerald-600 rounded-full p-1 mt-0.5 shrink-0">
                         <Check className="h-3 w-3" />
                       </div>
+
                       <span>{benefit}</span>
                     </li>
                   ))}
                 </ul>
 
-                {/* Enquire Now CTA link */}
+                {/* CTA */}
                 <button
                   onClick={() => handleScrollTo("counselling-form")}
-                  className="flex items-center gap-1.5 text-xs md:text-sm font-bold text-primary hover:text-primary-hover group/link w-fit cursor-pointer focus:outline-none"
+                  className="
+                    mt-auto
+                    inline-flex
+                    items-center
+                    justify-center
+                    gap-2
+                    px-5
+                    py-3
+                    rounded-xl
+                    bg-primary
+                    text-white
+                    text-sm
+                    font-semibold
+                    hover:scale-105
+                    hover:shadow-lg
+                    transition-all
+                    duration-300
+                  "
                 >
-                  <span>Enquire Now</span>
-                  <span className="transition-transform group-hover/link:translate-x-0.5">&rarr;</span>
+                  Enquire Now
+                  <span>→</span>
                 </button>
               </Card>
             );
           })}
         </div>
-
       </div>
     </section>
   );
 };
+

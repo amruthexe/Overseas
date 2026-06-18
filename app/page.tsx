@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustedUniversities } from "@/components/sections/TrustedUniversities";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { FeaturedJobsSection } from "@/components/sections/FeaturedJobsSection";
 import { DestinationsSection } from "@/components/sections/DestinationsSection";
 import { WhyChooseUsSection } from "@/components/sections/WhyChooseUsSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
@@ -39,7 +40,16 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="relative flex flex-col min-h-screen bg-white overflow-hidden z-0">
+      {/* Global Red Smoke / Glow Background Effects */}
+      <div className="absolute top-[5%] right-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "8s" }} />
+      <div className="absolute top-[20%] left-[-15%] w-[600px] h-[600px] bg-red-500/8 rounded-full blur-[160px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "12s" }} />
+      <div className="absolute top-[38%] right-[-15%] w-[550px] h-[550px] bg-primary/8 rounded-full blur-[150px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "10s" }} />
+      <div className="absolute top-[55%] left-[-10%] w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[130px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "9s" }} />
+      <div className="absolute top-[70%] right-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[155px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "11s" }} />
+      <div className="absolute top-[85%] left-[-15%] w-[500px] h-[500px] bg-red-500/8 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "13s" }} />
+      <div className="absolute bottom-[2%] right-[5%] w-[450px] h-[450px] bg-primary/10 rounded-full blur-[125px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "7s" }} />
+
       {/* Sticky Glassmorphic Header */}
       <Navbar />
 
@@ -50,6 +60,8 @@ export default function Home() {
         <TrustedUniversities />
         
         <ServicesSection />
+        
+        <FeaturedJobsSection />
         
         <DestinationsSection />
         

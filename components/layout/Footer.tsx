@@ -80,7 +80,7 @@ export const Footer = () => {
   const socialLinks = [
     { icon: FacebookIcon, href: "https://facebook.com", label: "Facebook" },
     { icon: TwitterIcon, href: "https://twitter.com", label: "Twitter" },
-    { icon: InstagramIcon, href: "https://instagram.com", label: "Instagram" },
+    { icon: InstagramIcon, href: "https://www.instagram.com/bhavitha_overseas_22?igsh=MTFoa3VhdWtoZ2o3ZA==", label: "Instagram" },
     { icon: LinkedinIcon, href: "https://linkedin.com", label: "LinkedIn" },
     { icon: YoutubeIcon, href: "https://youtube.com", label: "YouTube" }
   ];
@@ -160,6 +160,11 @@ export const Footer = () => {
                 </button>
               </li>
               <li>
+                <button onClick={() => handleScrollTo("featured-jobs")} className="hover:text-primary transition-colors cursor-pointer focus:outline-none">
+                  Featured Jobs
+                </button>
+              </li>
+              <li>
                 <button onClick={() => handleScrollTo("testimonials")} className="hover:text-primary transition-colors cursor-pointer focus:outline-none">
                   Student Success
                 </button>
@@ -188,17 +193,17 @@ export const Footer = () => {
               </li>
               <li>
                 <button onClick={() => handleScrollTo("services")} className="hover:text-primary transition-colors cursor-pointer focus:outline-none">
-                  IELTS Coaching
+                  IT Jobs
                 </button>
               </li>
               <li>
                 <button onClick={() => handleScrollTo("services")} className="hover:text-primary transition-colors cursor-pointer focus:outline-none">
-                  SOP & Documentation
+                  Non-IT Jobs
                 </button>
               </li>
               <li>
                 <button onClick={() => handleScrollTo("services")} className="hover:text-primary transition-colors cursor-pointer focus:outline-none">
-                  Scholarship Guidance
+                  Career Counselling
                 </button>
               </li>
             </ul>
@@ -210,21 +215,41 @@ export const Footer = () => {
             <ul className="space-y-3.5 text-sm">
               <li className="flex gap-3 items-start">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                <span>102 Broadway Chambers, Suite 4B, New York, NY 10007</span>
+                <a 
+                  href="https://maps.app.goo.gl/ZXUjpMZdzxaDD9ov9?g_st=aw" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="hover:text-white transition-colors hover:underline"
+                >
+                  Near Gayathri apartment, Suryalanka beach road, Bapatla
+                </a>
               </li>
               <li className="flex gap-3 items-center">
                 <Phone className="h-4 w-4 text-primary shrink-0" />
                 <a href="tel:+18001234567" className="hover:text-white transition-colors">
-                  +1 800 123 4567
+                  +91 9052580275
                 </a>
               </li>
               <li className="flex gap-3 items-center">
                 <Mail className="h-4 w-4 text-primary shrink-0" />
-                <a href="mailto:info@Bhavitha Overseasoverseas.com" className="hover:text-white transition-colors break-all">
-                  info@bhavithaoverseasoverseas.com
+                <a href="mailto:Bhavithaoverseas123@gmail.com" className="hover:text-white transition-colors break-all">
+                  Bhavithaoverseas123@gmail.com
                 </a>
               </li>
             </ul>
+            
+            {/* Embedded Google Map */}
+            <div className="w-full h-32 rounded-xl overflow-hidden border border-gray-800 mt-4 shadow-inner">
+              <iframe
+                src="https://maps.google.com/maps?q=Near%20Gayathri%20apartment,%20Suryalanka%20beach%20road,%20Bapatla&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
           </div>
 
           {/* Column 4: Business Hours & Socials */}

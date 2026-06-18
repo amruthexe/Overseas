@@ -25,7 +25,7 @@ export const DestinationsSection = () => {
   };
 
   return (
-    <section id="destinations" className="bg-accent-gray py-16 md:py-24 border-y border-border-gray/40">
+    <section id="destinations" className="bg-transparent py-16 md:py-24 border-y border-border-gray/40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

@@ -135,7 +135,7 @@ export const HeroSection = () => {
 
 
   return (
-    <section className="relative overflow-hidden bg-white pt-24 pb-20">
+    <section className="relative overflow-hidden bg-transparent pt-24 pb-20">
       {/* Background Blur Effects */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-red-100/60 blur-3xl rounded-full -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-red-50 blur-3xl rounded-full translate-x-1/3 translate-y-1/3" />
