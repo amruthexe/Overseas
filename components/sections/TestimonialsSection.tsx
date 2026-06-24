@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 import { TESTIMONIALS } from "../../lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
@@ -75,26 +74,14 @@ export const TestimonialsSection = () => {
                 exit="exit"
                 className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center"
               >
-                {/* Student Photo Column */}
-                <div className="md:col-span-4 flex flex-col items-center text-center">
-                  <div className="relative h-24 w-24 md:h-28 md:w-28 rounded-2xl overflow-hidden border-4 border-white shadow-premium bg-gray-100 shrink-0">
-                    <Image
-                      src={current.image}
-                      alt={`Portrait of ${current.name}, study abroad graduate`}
-                      fill
-                      className="object-cover"
-                      sizes="120px"
-                    />
-                  </div>
-                  
-                  <div className="mt-4">
-                    <h4 className="text-base md:text-lg font-bold text-gray-800 leading-none">
-                      {current.name}
-                    </h4>
-                    <span className="inline-block bg-primary/10 text-primary text-xxs font-extrabold px-2.5 py-0.5 rounded-full mt-1.5 uppercase tracking-wide">
-                      Study in {current.country}
-                    </span>
-                  </div>
+                {/* Student Details Column */}
+                <div className="md:col-span-4 flex flex-col items-center text-center space-y-2">
+                  <h4 className="text-lg md:text-xl font-bold text-gray-800 leading-none">
+                    {current.name}
+                  </h4>
+                  <span className="inline-block bg-primary/10 text-primary text-xxs font-extrabold px-3 py-1 rounded-full uppercase tracking-wide">
+                    Study in {current.country}
+                  </span>
                 </div>
 
                 {/* Testimonial Review Column */}

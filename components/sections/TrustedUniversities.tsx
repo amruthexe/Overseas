@@ -21,7 +21,7 @@ export const TrustedUniversities = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
           {TRUSTED_UNIVERSITIES.map((uni, index) => (
             <motion.div
               key={uni.name}

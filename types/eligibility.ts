@@ -13,7 +13,23 @@ export type ProfessionalDesignation =
 
 export type VisaBudget = "₹55K - ₹1L" | "₹1L - ₹2L" | "Above ₹2L";
 
-export type CountryChoice = "Germany" | "Canada" | "Australia" | "UK";
+export type CountryChoice = 
+  | "USA"
+  | "United Kingdom"
+  | "Canada"
+  | "Australia"
+  | "Germany"
+  | "Ireland"
+  | "France"
+  | "Netherlands"
+  | "Singapore"
+  | "Malaysia"
+  | "Russia"
+  | "Dubai (UAE)"
+  | "Latvia"
+  | "Poland"
+  | "Ukraine"
+  | "Slovakia";
 export type VisaType = "Job Seeker Visa" | "PR" | "Student Visa" | "Work Visa";
 
 export type IELTSScoreRange = "Not Attempted" | "5-6" | "6-7" | "7+";

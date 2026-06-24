@@ -180,7 +180,7 @@ export const DESTINATIONS: Destination[] = [
     country: "Australia",
     code: "AU",
     universitiesCount: 40,
-    image: "https://d3benx6w5yjcsf.cloudfront.net/media/aPusZLpReVYa3p9D_Australia-2.jpg",
+    image: "/Australia.jpg",
     popularCourses: ["Accounting", "Healthcare", "Data Analytics", "Engineering"],
     visaSuccess: "95%"
   },
@@ -201,6 +201,78 @@ export const DESTINATIONS: Destination[] = [
     image: "https://hblimg.mmtcdn.com/content/hubble/img/maingalleryimgs/mmt/activities/t_trp/m_Dublin_1_l_667_1000.jpg?im=Resize=(320,228)",
     popularCourses: ["Software Engineering", "Cloud Computing", "Pharmaceuticals", "Finance"],
     visaSuccess: "99%"
+  },
+  {
+    id: "singapore",
+    country: "Singapore",
+    code: "SG",
+    universitiesCount: 10,
+    image: "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=600&q=80",
+    popularCourses: ["Computer Science", "Business Admin", "Finance", "Engineering"],
+    visaSuccess: "97%"
+  },
+  {
+    id: "malaysia",
+    country: "Malaysia",
+    code: "MY",
+    universitiesCount: 25,
+    image: "/malaysia.jpg",
+    popularCourses: ["Information Technology", "Business Management", "Engineering"],
+    visaSuccess: "96%"
+  },
+  {
+    id: "russia",
+    country: "Russia",
+    code: "RU",
+    universitiesCount: 80,
+    image: "https://images.unsplash.com/photo-1512495039889-52a3b799c9bc?auto=format&fit=crop&w=600&q=80",
+    popularCourses: ["Medicine (MBBS)", "Aeronautical Engg", "Computer Science"],
+    visaSuccess: "94%"
+  },
+  {
+    id: "dubai",
+    country: "Dubai (UAE)",
+    code: "AE",
+    universitiesCount: 30,
+    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=600&q=80",
+    popularCourses: ["Hospitality Management", "Business Admin", "Civil Engineering"],
+    visaSuccess: "98%"
+  },
+  {
+    id: "latvia",
+    country: "Latvia",
+    code: "LV",
+    universitiesCount: 15,
+    image: "/Latvia.jpg",
+    popularCourses: ["Medicine", "Computer Systems", "Aviation Management"],
+    visaSuccess: "95%"
+  },
+  {
+    id: "poland",
+    country: "Poland",
+    code: "PL",
+    universitiesCount: 45,
+    image: "/Poland.jpeg",
+    popularCourses: ["Medicine", "Engineering", "Data Science", "Business"],
+    visaSuccess: "96%"
+  },
+  {
+    id: "ukraine",
+    country: "Ukraine",
+    code: "UA",
+    universitiesCount: 35,
+    image: "https://images.unsplash.com/photo-1561542320-9a18cd340469?auto=format&fit=crop&w=600&q=80",
+    popularCourses: ["Medicine (MBBS)", "Software Engineering", "Business"],
+    visaSuccess: "92%"
+  },
+  {
+    id: "slovakia",
+    country: "Slovakia",
+    code: "SK",
+    universitiesCount: 20,
+    image: "/Slovakia.jpg",
+    popularCourses: ["Automotive Engg", "Computer Science", "Management"],
+    visaSuccess: "95%"
   }
 ];
 
@@ -274,7 +346,7 @@ export const TESTIMONIALS: Testimonial[] = [
     course: "M.S. in Computer Science",
     rating: 5,
     review: "Bhavitha Overseas Overseas completely transformed my study abroad dream. Their SOP guidance was phenomenal, helping me highlight my project work perfectly. Getting into Stanford was a combined effort, and their visa support was the icing on the cake!",
-    image: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=150&h=150&q=80"
+    image: "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?auto=format&fit=crop&w=150&h=150&q=80"
   },
   {
     id: "test-2",
@@ -284,7 +356,7 @@ export const TESTIMONIALS: Testimonial[] = [
     course: "M.Sc. in Biotechnology",
     rating: 5,
     review: "The entire team was incredibly supportive throughout my university selection process. They did not just suggest generic universities but matched me with the exact professors and labs in the UK. Truly an end-to-end service!",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80"
+    image: "https://images.unsplash.com/photo-1589156280159-27698a70f29e?auto=format&fit=crop&w=150&h=150&q=80"
   },
   {
     id: "test-3",
@@ -294,7 +366,7 @@ export const TESTIMONIALS: Testimonial[] = [
     course: "MBA in Finance",
     rating: 5,
     review: "I was extremely anxious about my visa because of a 2-year career gap. The expert counsellors at Bhavitha Overseas structured my statement of purpose so well that my visa was approved in less than 3 weeks without any queries. Highly recommended!",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150&q=80"
+    image: "https://images.unsplash.com/photo-1618018352910-72bdafdc7258?auto=format&fit=crop&w=150&h=150&q=80"
   },
   {
     id: "test-4",
@@ -304,7 +376,7 @@ export const TESTIMONIALS: Testimonial[] = [
     course: "M.Sc. in Automotive Engineering",
     rating: 5,
     review: "German public universities require meticulous documentation and strict deadlines. Bhavitha Overseas was on top of everything. They kept me updated on Unit-Assist status and helped me secure DAAD scholarships. Exceptional experience!",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&h=150&q=80"
+    image: "https://images.unsplash.com/photo-1614289371518-722f2615943d?auto=format&fit=crop&w=150&h=150&q=80"
   }
 ];
 
@@ -395,6 +467,54 @@ export const TRUSTED_UNIVERSITIES = [
   logoText: "NETHERLANDS",
   country: "Netherlands",
   countryCode: "NL",
+},
+{
+  name: "Singapore",
+  logoText: "SINGAPORE",
+  country: "Singapore",
+  countryCode: "SG",
+},
+{
+  name: "Malaysia",
+  logoText: "MALAYSIA",
+  country: "Malaysia",
+  countryCode: "MY",
+},
+{
+  name: "Russia",
+  logoText: "RUSSIA",
+  country: "Russia",
+  countryCode: "RU",
+},
+{
+  name: "Dubai",
+  logoText: "DUBAI",
+  country: "Dubai (UAE)",
+  countryCode: "AE",
+},
+{
+  name: "Latvia",
+  logoText: "LATVIA",
+  country: "Latvia",
+  countryCode: "LV",
+},
+{
+  name: "Poland",
+  logoText: "POLAND",
+  country: "Poland",
+  countryCode: "PL",
+},
+{
+  name: "Ukraine",
+  logoText: "UKRAINE",
+  country: "Ukraine",
+  countryCode: "UA",
+},
+{
+  name: "Slovakia",
+  logoText: "SLOVAKIA",
+  country: "Slovakia",
+  countryCode: "SK",
 },
 ];
 

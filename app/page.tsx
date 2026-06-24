@@ -40,15 +40,18 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="relative flex flex-col min-h-screen bg-white overflow-hidden z-0">
+    <div className="relative flex flex-col min-h-screen bg-gradient-to-b from-[#fafafd] via-[#ffffff] to-[#f7f8fa] overflow-hidden z-0">
+      {/* Subtle Premium Grid Background Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(226,232,240,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(226,232,240,0.45)_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none -z-20" />
+
       {/* Global Red Smoke / Glow Background Effects */}
-      <div className="absolute top-[5%] right-[-10%] w-[500px] h-[500px] bg-primary/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "8s" }} />
-      <div className="absolute top-[20%] left-[-15%] w-[600px] h-[600px] bg-red-500/8 rounded-full blur-[160px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "12s" }} />
-      <div className="absolute top-[38%] right-[-15%] w-[550px] h-[550px] bg-primary/8 rounded-full blur-[150px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "10s" }} />
-      <div className="absolute top-[55%] left-[-10%] w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[130px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "9s" }} />
-      <div className="absolute top-[70%] right-[-10%] w-[600px] h-[600px] bg-primary/10 rounded-full blur-[155px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "11s" }} />
-      <div className="absolute top-[85%] left-[-15%] w-[500px] h-[500px] bg-red-500/8 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "13s" }} />
-      <div className="absolute bottom-[2%] right-[5%] w-[450px] h-[450px] bg-primary/10 rounded-full blur-[125px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "7s" }} />
+      <div className="absolute top-[2%] right-[-10%] w-[600px] h-[600px] bg-primary/12 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "8s" }} />
+      <div className="absolute top-[18%] left-[-15%] w-[700px] h-[700px] bg-red-500/10 rounded-full blur-[160px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "12s" }} />
+      <div className="absolute top-[35%] right-[-15%] w-[650px] h-[650px] bg-primary/10 rounded-full blur-[150px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "10s" }} />
+      <div className="absolute top-[52%] left-[-10%] w-[600px] h-[600px] bg-orange-500/8 rounded-full blur-[130px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "9s" }} />
+      <div className="absolute top-[68%] right-[-10%] w-[700px] h-[700px] bg-primary/12 rounded-full blur-[155px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "11s" }} />
+      <div className="absolute top-[82%] left-[-15%] w-[600px] h-[600px] bg-red-500/10 rounded-full blur-[140px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "13s" }} />
+      <div className="absolute bottom-[1%] right-[5%] w-[500px] h-[500px] bg-primary/12 rounded-full blur-[125px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: "7s" }} />
 
       {/* Sticky Glassmorphic Header */}
       <Navbar />

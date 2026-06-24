@@ -64,7 +64,7 @@ export default function GermanyEligibilityPage() {
       designation: undefined,
       speaksEnglish: undefined,
       budget: undefined,
-      interestedCountry: "Germany", // Defaulted as per Germany Portal requirements
+      interestedCountry: undefined, // Selected from the list
       preferredVisa: undefined,
       hasPassport: undefined,
       ieltsScore: undefined,
@@ -209,15 +209,41 @@ export default function GermanyEligibilityPage() {
 
   const stateOptions = [
     { label: "Andhra Pradesh", value: "Andhra Pradesh" },
-    { label: "Telangana", value: "Telangana" },
-    { label: "Karnataka", value: "Karnataka" },
-    { label: "Maharashtra", value: "Maharashtra" },
-    { label: "Tamil Nadu", value: "Tamil Nadu" },
-    { label: "Delhi NCR", value: "Delhi" },
-    { label: "Kerala", value: "Kerala" },
+    { label: "Arunachal Pradesh", value: "Arunachal Pradesh" },
+    { label: "Assam", value: "Assam" },
+    { label: "Bihar", value: "Bihar" },
+    { label: "Chhattisgarh", value: "Chhattisgarh" },
+    { label: "Goa", value: "Goa" },
     { label: "Gujarat", value: "Gujarat" },
+    { label: "Haryana", value: "Haryana" },
+    { label: "Himachal Pradesh", value: "Himachal Pradesh" },
+    { label: "Jharkhand", value: "Jharkhand" },
+    { label: "Karnataka", value: "Karnataka" },
+    { label: "Kerala", value: "Kerala" },
+    { label: "Madhya Pradesh", value: "Madhya Pradesh" },
+    { label: "Maharashtra", value: "Maharashtra" },
+    { label: "Manipur", value: "Manipur" },
+    { label: "Meghalaya", value: "Meghalaya" },
+    { label: "Mizoram", value: "Mizoram" },
+    { label: "Nagaland", value: "Nagaland" },
+    { label: "Odisha", value: "Odisha" },
+    { label: "Punjab", value: "Punjab" },
+    { label: "Rajasthan", value: "Rajasthan" },
+    { label: "Sikkim", value: "Sikkim" },
+    { label: "Tamil Nadu", value: "Tamil Nadu" },
+    { label: "Telangana", value: "Telangana" },
+    { label: "Tripura", value: "Tripura" },
+    { label: "Uttar Pradesh", value: "Uttar Pradesh" },
+    { label: "Uttarakhand", value: "Uttarakhand" },
     { label: "West Bengal", value: "West Bengal" },
-    { label: "Other State", value: "Other" }
+    { label: "Andaman & Nicobar Islands", value: "Andaman & Nicobar Islands" },
+    { label: "Chandigarh", value: "Chandigarh" },
+    { label: "Dadra & Nagar Haveli and Daman & Diu", value: "Dadra & Nagar Haveli and Daman & Diu" },
+    { label: "Delhi", value: "Delhi" },
+    { label: "Jammu & Kashmir", value: "Jammu & Kashmir" },
+    { label: "Ladakh", value: "Ladakh" },
+    { label: "Lakshadweep", value: "Lakshadweep" },
+    { label: "Puducherry", value: "Puducherry" },
   ];
 
   const designationOptions = [
@@ -228,6 +254,25 @@ export default function GermanyEligibilityPage() {
     { label: "Nurse / Healthcare Professional", value: "Nurse" },
     { label: "Accountant / Finance Professional", value: "Accountant" },
     { label: "Other Profile", value: "Other" }
+  ];
+
+  const countryOptions = [
+    { label: "United States", value: "USA" },
+    { label: "United Kingdom", value: "United Kingdom" },
+    { label: "Canada", value: "Canada" },
+    { label: "Australia", value: "Australia" },
+    { label: "Germany", value: "Germany" },
+    { label: "Ireland", value: "Ireland" },
+    { label: "France", value: "France" },
+    { label: "Netherlands", value: "Netherlands" },
+    { label: "Singapore", value: "Singapore" },
+    { label: "Malaysia", value: "Malaysia" },
+    { label: "Russia", value: "Russia" },
+    { label: "Dubai (UAE)", value: "Dubai (UAE)" },
+    { label: "Latvia", value: "Latvia" },
+    { label: "Poland", value: "Poland" },
+    { label: "Ukraine", value: "Ukraine" },
+    { label: "Slovakia", value: "Slovakia" }
   ];
 
   const languageOptions = [
@@ -436,30 +481,15 @@ export default function GermanyEligibilityPage() {
                   >
                     <div className="space-y-5 md:space-y-6">
                       
-                      {/* Interested Country selection cards */}
-                      <div className="space-y-2">
-                        <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider">
-                          Which country are you interested in? *
-                        </label>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                          {(["Germany", "Canada", "Australia", "UK"] as const).map((country) => (
-                            <OptionCard
-                              key={country}
-                              title={country}
-                              selected={formValues.interestedCountry === country}
-                              onClick={() => {
-                                setValue("interestedCountry", country);
-                                clearErrors("interestedCountry");
-                              }}
-                            />
-                          ))}
-                        </div>
-                        {errors.interestedCountry && (
-                          <p className="text-xxs text-red-500 font-bold mt-1">
-                            {errors.interestedCountry.message}
-                          </p>
-                        )}
-                      </div>
+                      {/* Interested Country choice */}
+                      <FormSelect
+                        label="Which country are you interested in? *"
+                        placeholder="Select destination country..."
+                        options={countryOptions}
+                        icon={Globe}
+                        register={register("interestedCountry")}
+                        error={errors.interestedCountry?.message}
+                      />
 
                       {/* Preferred Visa Types Selection */}
                       <div className="space-y-2">

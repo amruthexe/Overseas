@@ -238,7 +238,7 @@ export const CounsellingCTASection = () => {
       designation: undefined,
       speaksEnglish: undefined,
       budget: undefined,
-      interestedCountry: "Germany",
+      interestedCountry: undefined,
       preferredVisa: undefined,
       hasPassport: undefined,
       ieltsScore: undefined,
@@ -371,15 +371,60 @@ export const CounsellingCTASection = () => {
 
   const stateOptions = [
     { label: "Andhra Pradesh", value: "Andhra Pradesh" },
-    { label: "Telangana", value: "Telangana" },
-    { label: "Karnataka", value: "Karnataka" },
-    { label: "Maharashtra", value: "Maharashtra" },
-    { label: "Tamil Nadu", value: "Tamil Nadu" },
-    { label: "Delhi", value: "Delhi" },
-    { label: "Kerala", value: "Kerala" },
+    { label: "Arunachal Pradesh", value: "Arunachal Pradesh" },
+    { label: "Assam", value: "Assam" },
+    { label: "Bihar", value: "Bihar" },
+    { label: "Chhattisgarh", value: "Chhattisgarh" },
+    { label: "Goa", value: "Goa" },
     { label: "Gujarat", value: "Gujarat" },
+    { label: "Haryana", value: "Haryana" },
+    { label: "Himachal Pradesh", value: "Himachal Pradesh" },
+    { label: "Jharkhand", value: "Jharkhand" },
+    { label: "Karnataka", value: "Karnataka" },
+    { label: "Kerala", value: "Kerala" },
+    { label: "Madhya Pradesh", value: "Madhya Pradesh" },
+    { label: "Maharashtra", value: "Maharashtra" },
+    { label: "Manipur", value: "Manipur" },
+    { label: "Meghalaya", value: "Meghalaya" },
+    { label: "Mizoram", value: "Mizoram" },
+    { label: "Nagaland", value: "Nagaland" },
+    { label: "Odisha", value: "Odisha" },
+    { label: "Punjab", value: "Punjab" },
+    { label: "Rajasthan", value: "Rajasthan" },
+    { label: "Sikkim", value: "Sikkim" },
+    { label: "Tamil Nadu", value: "Tamil Nadu" },
+    { label: "Telangana", value: "Telangana" },
+    { label: "Tripura", value: "Tripura" },
+    { label: "Uttar Pradesh", value: "Uttar Pradesh" },
+    { label: "Uttarakhand", value: "Uttarakhand" },
     { label: "West Bengal", value: "West Bengal" },
-    { label: "Other", value: "Other" }
+    { label: "Andaman & Nicobar Islands", value: "Andaman & Nicobar Islands" },
+    { label: "Chandigarh", value: "Chandigarh" },
+    { label: "Dadra & Nagar Haveli and Daman & Diu", value: "Dadra & Nagar Haveli and Daman & Diu" },
+    { label: "Delhi", value: "Delhi" },
+    { label: "Jammu & Kashmir", value: "Jammu & Kashmir" },
+    { label: "Ladakh", value: "Ladakh" },
+    { label: "Lakshadweep", value: "Lakshadweep" },
+    { label: "Puducherry", value: "Puducherry" },
+  ];
+
+  const countryOptions = [
+    { label: "United States", value: "USA" },
+    { label: "United Kingdom", value: "United Kingdom" },
+    { label: "Canada", value: "Canada" },
+    { label: "Australia", value: "Australia" },
+    { label: "Germany", value: "Germany" },
+    { label: "Ireland", value: "Ireland" },
+    { label: "France", value: "France" },
+    { label: "Netherlands", value: "Netherlands" },
+    { label: "Singapore", value: "Singapore" },
+    { label: "Malaysia", value: "Malaysia" },
+    { label: "Russia", value: "Russia" },
+    { label: "Dubai (UAE)", value: "Dubai (UAE)" },
+    { label: "Latvia", value: "Latvia" },
+    { label: "Poland", value: "Poland" },
+    { label: "Ukraine", value: "Ukraine" },
+    { label: "Slovakia", value: "Slovakia" }
   ];
 
   const designationOptions = [
@@ -417,7 +462,7 @@ export const CounsellingCTASection = () => {
             <span>Takes 60 seconds</span>
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
-            Free Germany Visa Eligibility Check
+            Free Study Abroad & Visa Eligibility Check
           </h2>
           <p className="text-sm md:text-base text-gray-500 font-semibold leading-relaxed">
             Trusted since 1999 &bull; Over 100K+ successful applicants. Lock in your consultation path today.
@@ -667,29 +712,14 @@ export const CounsellingCTASection = () => {
                       </div>
 
                       {/* Country choice */}
-                      <div className="space-y-2 text-left">
-                        <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider">
-                          Which country are you interested in?
-                        </label>
-                        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                          {(["Germany", "Canada", "Australia", "UK"] as const).map((country) => (
-                            <RedOptionCard
-                              key={country}
-                              title={country}
-                              selected={formValues.interestedCountry === country}
-                              onClick={() => {
-                                setValue("interestedCountry", country);
-                                clearErrors("interestedCountry");
-                              }}
-                            />
-                          ))}
-                        </div>
-                        {errors.interestedCountry && (
-                          <p className="text-xxs text-red-500 font-bold mt-1">
-                            {errors.interestedCountry.message}
-                          </p>
-                        )}
-                      </div>
+                      <RedFormSelect
+                        label="Which country are you interested in? *"
+                        placeholder="Select destination country..."
+                        options={countryOptions}
+                        icon={Globe}
+                        register={register("interestedCountry")}
+                        error={errors.interestedCountry?.message}
+                      />
 
                       {/* Preferred Visa */}
                       <div className="space-y-2 text-left">

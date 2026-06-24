@@ -45,7 +45,24 @@ export const step2Schema = z.object({
 
 // Step 3: Immigration Interest Schema
 export const step3Schema = z.object({
-  interestedCountry: z.enum(["Germany", "Canada", "Australia", "UK"] as const, {
+  interestedCountry: z.enum([
+    "USA",
+    "United Kingdom",
+    "Canada",
+    "Australia",
+    "Germany",
+    "Ireland",
+    "France",
+    "Netherlands",
+    "Singapore",
+    "Malaysia",
+    "Russia",
+    "Dubai (UAE)",
+    "Latvia",
+    "Poland",
+    "Ukraine",
+    "Slovakia"
+  ] as const, {
     message: "Please select a country of interest",
   }),
   preferredVisa: z.enum(["Job Seeker Visa", "PR", "Student Visa", "Work Visa"] as const, {
