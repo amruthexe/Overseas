@@ -41,6 +41,39 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="relative flex flex-col min-h-screen bg-gradient-to-b from-[#fafafd] via-[#ffffff] to-[#f7f8fa] overflow-hidden z-0">
+      {/* JSON-LD Structured Data for Google Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EducationalOrganization",
+            "name": "Bhavitha Overseas",
+            "url": "https://www.bhavithaoverseas.com",
+            "logo": "https://www.bhavithaoverseas.com/newowner.jpeg",
+            "description": "Bhavitha Overseas Overseas is a premium study abroad and student visa consultancy helping students secure admission into Global Ivy Leagues and top research hubs across USA, UK, Canada, Australia, Germany, Ireland, Singapore, Dubai, Latvia, Poland, Ukraine, and Slovakia.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Near Gayathri apartment, Suryalanka beach road",
+              "addressLocality": "Bapatla",
+              "addressRegion": "Andhra Pradesh",
+              "postalCode": "522101",
+              "addressCountry": "IN"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-90525-80275",
+              "contactType": "customer service",
+              "email": "Bhavithaoverseas123@gmail.com",
+              "availableLanguage": ["English", "Telugu", "Hindi"]
+            },
+            "sameAs": [
+              "https://www.instagram.com/bhavitha_overseas_22"
+            ]
+          })
+        }}
+      />
+
       {/* Subtle Premium Grid Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(226,232,240,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(226,232,240,0.45)_1px,transparent_1px)] bg-[size:5rem_5rem] pointer-events-none -z-20" />
 
