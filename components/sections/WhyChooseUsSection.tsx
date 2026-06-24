@@ -47,7 +47,7 @@ export const WhyChooseUsSection = () => {
             {/* Main Visual Image */}
             <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-3xl overflow-hidden shadow-premium border-4 border-white z-10 bg-gray-50">
               <Image
-                src="/owner.jpeg"
+                src="/newowner.jpeg"
                 alt="Professional career advisor mentoring an eager student about study abroad plans"
                 fill
                 className="object-cover"
